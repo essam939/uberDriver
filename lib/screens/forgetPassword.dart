@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foralldriver/model/customWidget.dart';
+import 'package:foralldriver/provider/colorProvider.dart';
 class ForgetPassword extends StatefulWidget {
   @override
   _ForgetPasswordState createState() => _ForgetPasswordState();
@@ -11,6 +12,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Forgetten your Password"),
+        backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -25,6 +27,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 child: RaisedButton(
                   child: Text("NEXT",style: TextStyle(color: Colors.white),),
                   onPressed: (){},
+                  color: ColorProvider().primaryColor,
                 ),
               ),
 

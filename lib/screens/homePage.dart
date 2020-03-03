@@ -72,13 +72,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _getLocation() async {
     var currentLocation = await Geolocator().getCurrentPosition(desiredAccuracy: LocationAccuracy.best);
-print("my location is ${currentLocation.latitude},${currentLocation.longitude}");
+    print("my location is ${currentLocation.latitude},${currentLocation.longitude}");
     setState(() {
       _markers.clear();
       final marker = Marker(
         markerId: MarkerId("curr_loc"),
         position: LatLng(currentLocation.latitude, currentLocation.longitude),
         infoWindow: InfoWindow(title: 'Your Location'),
+        icon: BitmapDescriptor.fromAsset("assets/images/uber.png"),
       );
       _markers["Current Location"] = marker;
     });
