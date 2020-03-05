@@ -19,52 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
   GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
   Completer<GoogleMapController> _controller = Completer();
   Map<PolylineId, Polyline> polylines = <PolylineId, Polyline>{};
-  int _polylineIdCounter = 1;
-  PolylineId selectedPolyline;
 
-  // Values when toggling polyline color
-  int colorsIndex = 0;
-  List<Color> colors = <Color>[
-    Colors.purple,
-    Colors.red,
-    Colors.green,
-    Colors.pink,
-  ];
-
-  // Values when toggling polyline width
-  int widthsIndex = 0;
-  List<int> widths = <int>[10, 20, 5];
-
-  int jointTypesIndex = 0;
-  List<JointType> jointTypes = <JointType>[
-    JointType.mitered,
-    JointType.bevel,
-    JointType.round
-  ];
-
-  // Values when toggling polyline end cap type
-  int endCapsIndex = 0;
-  List<Cap> endCaps = <Cap>[Cap.buttCap, Cap.squareCap, Cap.roundCap];
-
-  // Values when toggling polyline start cap type
-  int startCapsIndex = 0;
-  List<Cap> startCaps = <Cap>[Cap.buttCap, Cap.squareCap, Cap.roundCap];
-
-  // Values when toggling polyline pattern
-  int patternsIndex = 0;
-  List<List<PatternItem>> patterns = <List<PatternItem>>[
-    <PatternItem>[],
-    <PatternItem>[
-      PatternItem.dash(30.0),
-      PatternItem.gap(20.0),
-      PatternItem.dot,
-      PatternItem.gap(20.0)
-    ],
-    <PatternItem>[PatternItem.dash(30.0), PatternItem.gap(20.0)],
-    <PatternItem>[PatternItem.dot, PatternItem.gap(10.0)],
-  ];
-
-  //GoogleMapController _mapController;
   static final CameraPosition _cameraPosition = CameraPosition(target: LatLng(31.222979, 29.957851),
     zoom: 17.0,
   );
@@ -97,17 +52,14 @@ class _MyHomePageState extends State<MyHomePage> {
         height: 90,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey, blurRadius: 11, offset: Offset(3.0, 4.0))
-          ],
+          boxShadow: [BoxShadow(color: Colors.grey, blurRadius: 11, offset: Offset(3.0, 4.0))],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Container(padding: EdgeInsets.only(left: 20),child: Icon(Icons.keyboard_arrow_up)),
-            Text("You're offline", style: TextStyle(fontSize: 30,)),
-            Container(padding: EdgeInsets.only(right: 20),child: Icon(Icons.list)),
+            Container(padding: EdgeInsets.only(left: 16),child: Icon(Icons.keyboard_arrow_up)),
+            Text("You're offline", style: TextStyle(fontSize: 25,)),
+            Container(padding: EdgeInsets.only(right: 16),child: Icon(Icons.list)),
           ],
         ),
       ),
@@ -127,14 +79,13 @@ class _MyHomePageState extends State<MyHomePage> {
             markers:_markers.values.toSet(),
             onMapCreated: (GoogleMapController controller) {
               _controller.complete(controller);
-              //_initCameraPosition();
             },
           ),
           Positioned(
             child: Align(
               alignment: Alignment.topCenter,
               child: Container(
-                margin: EdgeInsets.only(top: 30),
+                margin: EdgeInsets.only(top: 25),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -245,17 +196,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           border: Border.all(color: Colors.white, width: 4),
           shape: BoxShape.circle,
           boxShadow: [
-            BoxShadow(
-                color: Colors.grey, blurRadius: 11, offset: Offset(3.0, 4.0))
-          ],
+            BoxShadow(color: Colors.grey, blurRadius: 11, offset: Offset(3.0, 4.0))],
         ),
-        child: ClipOval(
-          child: Image.asset(
-            "assets/images/user_profile.jpg",
-            width: 60,
-            height: 60,
-            fit: BoxFit.cover,
-          ),
+        child: ClipOval(child: Image.asset("assets/images/user_profile.jpg", width: 50, height: 50, fit: BoxFit.cover,),
         ),
       ),
     );
@@ -276,8 +219,7 @@ class _PriceWidgetState extends State<PriceWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
-      height: 60,
+      width: 100, height: 50,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white, width: 4),
         color: Colors.black,
@@ -291,16 +233,8 @@ class _PriceWidgetState extends State<PriceWidget> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text("\$",
-              style: TextStyle(
-                  color: ColorProvider().primaryColor,
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold)),
-          Text(widget.price,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 26,
-                  fontWeight: FontWeight.bold)),
+          Text("\$", style: TextStyle(color: ColorProvider().primaryColor, fontSize: 25, fontWeight: FontWeight.bold)),
+          Text(widget.price, style: TextStyle(color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold)),
         ],
       ),
     );
@@ -338,15 +272,9 @@ class _GoButtonState extends State<GoButton> {
               onPressed: widget.onPressed,
               splashColor: Colors.black,
               fillColor: ColorProvider().primaryColor,
-              elevation: 15.0,
+              elevation: 10.0,
               shape: CircleBorder(),
-              child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text(widget.title,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28))),
+              child: Padding(padding: EdgeInsets.all(20.0), child: Text(widget.title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25))),
             ),
           ),
         ),

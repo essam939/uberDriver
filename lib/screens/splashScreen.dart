@@ -10,27 +10,20 @@ class AnimatedSplashScreen extends StatefulWidget {
 class SplashScreenState extends State<AnimatedSplashScreen>
     with SingleTickerProviderStateMixin {
   var _visible = true;
-
   AnimationController animationController;
   Animation<double> animation;
-
   startTime() async {
     var _duration = new Duration(seconds: 3);
     return new Timer(_duration, navigationPage);
   }
-
   void navigationPage() {
     Navigator.pushReplacementNamed(context, "/welcomePage");
   }
-
   @override
   void initState() {
     super.initState();
-    animationController = new AnimationController(
-        vsync: this, duration: new Duration(seconds: 2));
-    animation =
-    new CurvedAnimation(parent: animationController, curve: Curves.easeOut);
-
+    animationController = new AnimationController(vsync: this, duration: new Duration(seconds: 2));
+    animation = new CurvedAnimation(parent: animationController, curve: Curves.easeOut);
     animation.addListener(() => this.setState(() {}));
     animationController.forward();
 
@@ -39,7 +32,6 @@ class SplashScreenState extends State<AnimatedSplashScreen>
     });
     startTime();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,20 +41,10 @@ class SplashScreenState extends State<AnimatedSplashScreen>
           new Column(
             mainAxisAlignment: MainAxisAlignment.end,
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-
-           //   Padding(padding: EdgeInsets.only(bottom: 30.0),child:new Image.asset('assets/images/powered_by.png',height: 25.0,fit: BoxFit.scaleDown,))
-
-
-            ],),
+            children: <Widget>[],),
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Image.asset(
-                'assets/images/logo.png',
-                width: animation.value * 250,
-                height: animation.value * 250,
-              ),
+            children: <Widget>[new Image.asset('assets/images/logo.png', width: animation.value * 250, height: animation.value * 250,),
             ],
           ),
         ],

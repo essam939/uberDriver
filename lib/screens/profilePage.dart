@@ -12,12 +12,8 @@ class ProfileView extends StatefulWidget {
   @override
   _ProfileViewState createState() => _ProfileViewState();
 }
-
-const kExpandedHeight = 300.0;
-
 class _ProfileViewState extends State<ProfileView> {
   ScrollController _scrollController;
-
   @override
   void initState() {
     super.initState();
@@ -32,7 +28,7 @@ class _ProfileViewState extends State<ProfileView> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                expandedHeight: kExpandedHeight,
+                expandedHeight: 300.0,
                 floating: false,
                 automaticallyImplyLeading: false,
                 pinned: true,
@@ -58,11 +54,9 @@ class _ProfileViewState extends State<ProfileView> {
                         decoration: BoxDecoration(color: Colors.black),
                         child: Center(
                           child: ProfileWidget(
-                            onPressed: () =>
-                                Navigator.pushNamed(context, "/profile"),
+                            onPressed: () => Navigator.pushNamed(context, "/profile"),
                             icon: Icons.star,
-                            name: "user Name",
-                            rating: "4.88",
+                            name: "user Name", rating: "4.88",
                           ),
                         ),
                       )
@@ -86,44 +80,23 @@ class _ProfileViewState extends State<ProfileView> {
                       children: <Widget>[
                         Column(
                           children: <Widget>[
-                            Text(
-                              "3,914",
-                              style: TextStyle(
-                                fontSize: 34,
-                              ),
-                            ),
+                            Text("3,914", style: TextStyle(fontSize: 30,),),
                             SizedBox(
                               height: 5,
                             ),
-                            Text(
-                              "Trips",
-                              style:
-                              TextStyle(color: Colors.grey, fontSize: 16),
-                            ),
+                            Text("Trips", style: TextStyle(color: Colors.grey, fontSize: 15),),
                           ],
                         ),
                         Container(
                           height: 60,
                           width: 1,
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  right: BorderSide(color: Colors.black12))),
+                          decoration: BoxDecoration(border: Border(right: BorderSide(color: Colors.black12))),
                         ),
                         Column(
                           children: <Widget>[
-                            Text(
-                              "4",
-                              style: TextStyle(
-                                fontSize: 34,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              "Years",
-                              style:
-                              TextStyle(color: Colors.grey, fontSize: 16),
+                            Text("4", style: TextStyle(fontSize: 30,),),
+                            SizedBox(height: 5,),
+                            Text("Years", style: TextStyle(color: Colors.grey, fontSize: 15),
                             ),
                           ],
                         ),
@@ -134,16 +107,9 @@ class _ProfileViewState extends State<ProfileView> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        "Tell customers a little about yourself",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
+                      SizedBox(height: 18,),
+                      Text("Tell customers a little about yourself", style: TextStyle(fontSize: 18),),
+                      SizedBox(height: 25,),
                       GestureDetector(
                         onTap: () {},
                         child: Container(
@@ -157,15 +123,9 @@ class _ProfileViewState extends State<ProfileView> {
                               borderRadius:
                               BorderRadius.all(const Radius.circular(4.0)),
                             ),
-                            child: Text('ADD DETAILS',
-                                style: TextStyle(
-                                    color: ColorProvider().primaryColor,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold))),
+                            child: Text('ADD DETAILS', style: TextStyle(color: ColorProvider().primaryColor, fontSize: 20, fontWeight: FontWeight.bold))),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      SizedBox(height: 10,),
                     ],
                   ),
                   Divider(),
@@ -174,20 +134,10 @@ class _ProfileViewState extends State<ProfileView> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(
-                          "Compliements",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 22,
-                              fontWeight: FontWeight.normal),
+                        Text("Compliements",
+                          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.normal),
                         ),
-                        Text(
-                          "VIEW ALL",
-                          style: TextStyle(
-                              color: ColorProvider().primaryColor,
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold),
-                        ),
+                        Text("VIEW ALL", style: TextStyle(color: ColorProvider().primaryColor, fontSize: 20, fontWeight: FontWeight.bold),),
                       ],
                     ),
                   ),
@@ -234,19 +184,13 @@ class _FunctionalButtonState extends State<FunctionalButton> {
                 color: Colors.white,
               )),
         ),
-        SizedBox(
-          height: 10,
-        ),
+        SizedBox(height: 10,),
         Container(
           margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 2.0),
-          child: Text(
-            widget.title,
-            style: TextStyle(fontSize: 20.0, color: Colors.white),
+          child: Text(widget.title, style: TextStyle(fontSize: 20.0, color: Colors.white),
           ),
         ),
-        SizedBox(
-          height: 20,
-        )
+        SizedBox(height: 18,)
       ],
     );
   }
@@ -285,19 +229,12 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10,),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 2.0),
-                child: Text(
-                  widget.name,
-                  style: TextStyle(fontSize: 20.0, color: Colors.white),
-                ),
+                child: Text(widget.name, style: TextStyle(fontSize: 20.0, color: Colors.white),),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              SizedBox(height: 18,),
               Container(
                 width: 160,
                 height: 50,
@@ -309,19 +246,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(widget.rating,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold)),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Icon(
-                      widget.icon,
-                      color: Colors.black,
-                      size: 22,
-                    )
+                    Text(widget.rating, style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                    SizedBox(width: 5,), Icon(widget.icon, color: Colors.black, size: 20,)
                   ],
                 ),
               ),
@@ -339,13 +265,7 @@ Widget makeCompliementsList(String title) {
     height: 220,
     child: Column(
       children: <Widget>[
-        Container(
-          height: 200,
-          child: ListView(
-            padding: EdgeInsets.all(10),
-            scrollDirection: Axis.horizontal,
-            children: makeContainers(title),
-          ),
+        Container(height: 200, child: ListView(padding: EdgeInsets.all(10), scrollDirection: Axis.horizontal, children: makeContainers(title),),
         )
       ],
     ),
@@ -371,35 +291,21 @@ List<Widget> makeContainers(String title) {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: 10,),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 2.0),
-                child: Text(
-                  title,
-                  style: TextStyle(fontSize: 16.0, color: Colors.black),
+                child: Text(title, style: TextStyle(fontSize: 16.0, color: Colors.black),
                 ),
               ),
             ],
           ),
-          Positioned(
-            left: 68,
-            top: -1,
-            child: Container(
-              width: 30,
-              height: 30,
+          Positioned(left: 68, top: -1,
+            child: Container(width: 30, height: 30,
               decoration: BoxDecoration(
                 color: Colors.black,
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.all(Radius.circular(50.0)),
-              ),
+                border: Border.all(color: Colors.white), borderRadius: BorderRadius.all(Radius.circular(50.0)),),
               child: Center(
-                child: Text("1",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold)),
+                child: Text("1", style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
               ),
             ),
           ),

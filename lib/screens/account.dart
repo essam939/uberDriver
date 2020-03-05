@@ -17,90 +17,52 @@ class _AccountViewState extends State<AccountView> {
   void initState() {
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Text("Account"),
-        ),
+        appBar: AppBar(backgroundColor: Colors.black, title: Text("Account"),),
         body: ListView(
           children: <Widget>[
-            SizedBox(
-              height: 40,
-            ),
-            Divider(),
             ListTile(
-              onTap: () {     Navigator.pushNamed(context, "/documents");},
-              title: Text("Documents", style: TextStyle(fontSize: 20)),
-              leading: Icon(
-                Icons.note,
-                color: Colors.grey,
-                size: 30,
-              ),
-              trailing:
-              Icon(Icons.chevron_right, color: Colors.black, size: 20),
+              title: Text("Documents", style: TextStyle(fontSize: 15)),
+              leading: Icon(Icons.note, color: Colors.grey, size: 25,),
+              trailing: Icon(Icons.chevron_right, color: Colors.black, size: 15),
+              onTap: () {Navigator.pushNamed(context, "/documents");},
             ),
             Divider(),
             ListTile(
               onTap: () { Navigator.pushNamed(context, "/paymentPage");},
-              title: Text("Payment", style: TextStyle(fontSize: 20)),
-              leading: Icon(
-                Icons.credit_card,
-                color: Colors.grey,
-                size: 30,
-              ),
-              trailing:
-              Icon(Icons.chevron_right, color: Colors.black, size: 20),
-            ),
+              title: Text("Payment", style: TextStyle(fontSize: 15)),
+              leading: Icon(Icons.credit_card, color: Colors.grey, size: 25,),
+              trailing: Icon(Icons.chevron_right, color: Colors.black, size: 15),),
             Divider(),
             ListTile(
+              title: Text("Perks", style: TextStyle(fontSize: 15)),
+              leading: Icon(Icons.favorite, color: Colors.grey, size: 25,),
+              trailing: Icon(Icons.chevron_right, color: Colors.black, size: 15),
               onTap: () { Navigator.pushNamed(context, "/perks");},
-              title: Text("Perks", style: TextStyle(fontSize: 20)),
-              leading: Icon(
-                Icons.favorite,
-                color: Colors.grey,
-                size: 30,
-              ),
-              trailing:
-              Icon(Icons.chevron_right, color: Colors.black, size: 20),
             ),
             Divider(),
             ListTile(
               onTap: () { Navigator.pushNamed(context, "/documents");},
-              title: Text("Ensurance", style: TextStyle(fontSize: 20)),
-              leading: Icon(
-                Icons.security,
-                color: Colors.grey,
-                size: 30,
-              ),
-              trailing:
-              Icon(Icons.chevron_right, color: Colors.black, size: 20),
+              title: Text("Ensurance", style: TextStyle(fontSize: 15)),
+              leading: Icon(Icons.security, color: Colors.grey, size: 25,),
+              trailing: Icon(Icons.chevron_right, color: Colors.black, size: 15),
             ),
             Divider(),
             ListTile(
+              title: Text("App Settings", style: TextStyle(fontSize: 15)),
+              leading: Icon(Icons.settings, color: Colors.grey, size: 25,
+              ),
+              trailing: Icon(Icons.chevron_right, color: Colors.black, size: 15),
               onTap: () { Navigator.pushNamed(context, "/settingsPage");},
-              title: Text("App Settings", style: TextStyle(fontSize: 20)),
-              leading: Icon(
-                Icons.settings,
-                color: Colors.grey,
-                size: 30,
-              ),
-              trailing:
-              Icon(Icons.chevron_right, color: Colors.black, size: 20),
             ),
             Divider(),
             ListTile(
-              onTap: () { Navigator.pushNamed(context, "/aboutPage");},
-              title: Text("About", style: TextStyle(fontSize: 20)),
-              leading: Icon(
-                Icons.info,
-                color: Colors.grey,
-                size: 30,
+              title: Text("About", style: TextStyle(fontSize: 15)),
+              leading: Icon(Icons.info, color: Colors.grey, size: 25,
               ),
-              trailing:
-              Icon(Icons.chevron_right, color: Colors.black, size: 20),
+              trailing: Icon(Icons.chevron_right, color: Colors.black, size: 15), onTap: () { Navigator.pushNamed(context, "/aboutPage");},
             ),
             Divider(),
           ],
